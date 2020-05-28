@@ -6,6 +6,7 @@
    <UUID>01074a76-615d-4d5a-808a-d97a29a84816</UUID>
    <migratedVersion>5.9.0</migratedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
+   <projectFileLocation>/Users/kishen/git/katalon-record-methods/katalon-record-methods.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>
