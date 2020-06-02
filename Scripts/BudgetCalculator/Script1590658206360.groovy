@@ -22,7 +22,7 @@ WebUI.click(findTestObject('Page_Budget Calculator - Homepage/img_Budget_link'))
 
 WebUI.sendKeys(findTestObject('Page_Budget Calculator - Homepage/input_Budget description'), Keys.chord(Keys.CONTROL, 'a'))
 
-WebUI.sendKeys(findTestObject('Page_Budget Calculator - Homepage/input_Budget description'), 'Training Budget blah')
+WebUI.sendKeys(findTestObject('Page_Budget Calculator - Homepage/input_Budget description'), 'Training Budget')
 
 WebUI.doubleClick(findTestObject('Page_Budget Calculator - Homepage/input_Total budget'))
 
