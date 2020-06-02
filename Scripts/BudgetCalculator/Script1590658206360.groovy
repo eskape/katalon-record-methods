@@ -30,3 +30,25 @@ WebUI.sendKeys(findTestObject('Page_Budget Calculator - Homepage/input_Total bud
 
 WebUI.sendKeys(findTestObject('Page_Budget Calculator - Homepage/input_Total budget'), '20')
 
+for (def index : (0..4)) {
+    WebUI.doubleClick(findTestObject('Page_Budget Calculator - Homepage/input_Start date'))
+
+    WebUI.sendKeys(findTestObject('Page_Budget Calculator - Homepage/input_Start date'), Keys.chord(Keys.DELETE))
+}
+
+WebUI.sendKeys(findTestObject('Page_Budget Calculator - Homepage/input_Start date'), '1/1/2020')
+
+for (def index : (0..4)) {
+    WebUI.doubleClick(findTestObject('Page_Budget Calculator - Homepage/input_End date'))
+
+    WebUI.sendKeys(findTestObject('Page_Budget Calculator - Homepage/input_End date'), Keys.chord(Keys.DELETE))
+}
+
+WebUI.sendKeys(findTestObject('Page_Budget Calculator - Homepage/input_End date'), '12/31/2020')
+
+WebUI.click(findTestObject('Page_Budget Calculator - Homepage/button_Create budget'))
+
+WebUI.waitForElementVisible(findTestObject('Page_Budget Calculator - Homepage/text_Opex'), 0)
+
+WebUI.waitForElementVisible(findTestObject('Page_Budget Calculator - Homepage/text_Capex'), 0)
+
