@@ -1,12 +1,9 @@
 trigger:
 - master
 
-variables:
-- group: APIKeys
-
 steps:
 - script: echo "Hello" 
-- script: echo ${AzureDevopsKatalon}
+- script: echo $(KatalonApiKey)
 
 #pool:
 #  vmImage: 'ubuntu-16.04'
