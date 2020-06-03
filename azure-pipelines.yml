@@ -10,10 +10,7 @@ steps:
 
 - script: docker run -t --rm -v "$(pwd)":/katalon/katalon/source katalonstudio/katalon katalon-execute.sh -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest" -apiKey="a4ca4c4a-b1c2-4805-b76a-0f24f6e03d91"
   displayName: 'Runnning Katalon TS_RegressionTest'
-- task: PublishPipelineArtifact@0
-  inputs:
-    artifactName: 'JUnit Report' 
-    targetPath: report/
+  
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
