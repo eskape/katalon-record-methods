@@ -21,5 +21,4 @@ steps:
 - task: katalonTask@0
   inputs:
     version: '7.4.0'
-    executeArgs: '-browserType="Chrome"'
-    apiKey: '1e59ca6d-199b-4ab1-ac64-4420630d637d'
+    executeArgs: '-browserType="Chrome" -apiKey="1e59ca6d-199b-4ab1-ac64-4420630d637d"'
