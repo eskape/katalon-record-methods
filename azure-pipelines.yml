@@ -21,4 +21,4 @@ steps:
 - task: katalonTask@0
   inputs:
     version: '7.4.0'
-    executeArgs: '-browserType="Chrome" -apiKey="a4ca4c4a-b1c2-4805-b76a-0f24f6e03d91"'
+    executeArgs: '-testSuitePath="Test Suites/TS_RegressionTest" -browserType="Chrome" -apiKey="a4ca4c4a-b1c2-4805-b76a-0f24f6e03d91"'
