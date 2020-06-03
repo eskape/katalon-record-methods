@@ -1,23 +1,19 @@
 trigger:
 - master
 
-steps:
-- script: echo "Hello" 
-- script: echo $(KatalonApiKey)
+pool:
+  vmImage: 'ubuntu-16.04'
 
-#pool:
-#  vmImage: 'ubuntu-16.04'
+- script: docker pull katalonstudio/katalon
+  displayName: 'Pull katalon studio images'
 
-#- script: docker pull katalonstudio/katalon
-#  displayName: 'Pull katalon studio images'
-
-#- script: docker run -t --rm -v "$(pwd)":/katalon/katalon/source katalonstudio/katalon katalon-execute.sh -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest" -apiKey="${AzureDevOpsKatalon}"
-#  displayName: 'Runnning Katalon TS_RegressionTest'
+- script: docker run -t --rm -v "$(pwd)":/katalon/katalon/source katalonstudio/katalon katalon-execute.sh -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest" -apiKey="$(KatalonApiKey)"
+  displayName: 'Runnning Katalon TS_RegressionTest'
   
-#- task: PublishTestResults@2
-#  inputs:
-#    testResultsFormat: 'JUnit'
-#    testResultsFiles: '**/*.xml'
-#    mergeTestResults: true
-#    failTaskOnFailedTests: true
-#    testRunTitle: 'Test run'
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/*.xml'
+    mergeTestResults: true
+    failTaskOnFailedTests: true
+    testRunTitle: 'Test run'
