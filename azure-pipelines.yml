@@ -14,3 +14,10 @@ steps:
   inputs:
     artifactName: 'JUnit Report' 
     targetPath: report/
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/TEST-*.xml'
+    mergeTestResults: true
+    failTaskOnFailedTests: true
+    testRunTitle: 'Test run'
