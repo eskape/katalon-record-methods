@@ -8,16 +8,18 @@ pool:
   vmImage: 'ubuntu-16.04'
 
 steps:
-- script: docker pull katalonstudio/katalon
-  displayName: 'Pull katalon studio images'
+- bash: echo "API Key: ${AzureDevopsKatalon}"
 
-- script: docker run -t --rm -v "$(pwd)":/katalon/katalon/source katalonstudio/katalon katalon-execute.sh -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest" -apiKey="${AzureDevOpsKatalon}"
-  displayName: 'Runnning Katalon TS_RegressionTest'
+#- script: docker pull katalonstudio/katalon
+#  displayName: 'Pull katalon studio images'
+
+#- script: docker run -t --rm -v "$(pwd)":/katalon/katalon/source katalonstudio/katalon katalon-execute.sh -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest" -apiKey="${AzureDevOpsKatalon}"
+#  displayName: 'Runnning Katalon TS_RegressionTest'
   
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: 'JUnit'
-    testResultsFiles: '**/*.xml'
-    mergeTestResults: true
-    failTaskOnFailedTests: true
-    testRunTitle: 'Test run'
+#- task: PublishTestResults@2
+#  inputs:
+#    testResultsFormat: 'JUnit'
+#    testResultsFiles: '**/*.xml'
+#    mergeTestResults: true
+#    failTaskOnFailedTests: true
+#    testRunTitle: 'Test run'
