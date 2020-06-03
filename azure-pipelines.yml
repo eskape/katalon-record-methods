@@ -22,4 +22,4 @@ steps:
   inputs:
     version: '7.4.0'
     executeArgs: '-browserType="Chrome"'
-    apiKey: 'ae87b6f1-2782-4ac7-b384-64f9101549d4'
+    apiKey: '1e59ca6d-199b-4ab1-ac64-4420630d637d'
