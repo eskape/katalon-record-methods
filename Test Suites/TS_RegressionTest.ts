@@ -22,4 +22,10 @@
       <isRun>true</isRun>
       <testCaseId>Test Cases/BudgetCalculator</testCaseId>
    </testCaseLink>
+   <testCaseLink>
+      <guid>ad2b9409-6895-4804-aafe-6f6682ba1e64</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/New Test Case</testCaseId>
+   </testCaseLink>
 </TestSuiteEntity>
