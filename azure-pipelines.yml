@@ -5,12 +5,19 @@ pool:
   vmImage: 'ubuntu-16.04'
 
 steps:
-- script: docker pull katalonstudio/katalon
-  displayName: 'Pull katalon studio images'
+#- script: docker pull katalonstudio/katalon
+#  displayName: 'Pull katalon studio images'
 
-- script: docker run -t --rm -v "$(pwd)":/katalon/katalon/source katalonstudio/katalon katalon-execute.sh -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest" -apiKey="$(KatalonApiKey)"
-  displayName: 'Runnning Katalon TS_RegressionTest'
-  
+#- script: docker run -t --rm -v "$(pwd)":/katalon/katalon/source katalonstudio/katalon katalon-execute.sh -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest" -apiKey="$(KatalonApiKey)"
+#  displayName: 'Runnning Katalon TS_RegressionTest'
+
+- task: katalonTask@0
+  inputs:
+    version: '7.4.1'
+    executeArgs: '-browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest" -apiKey="$(KatalonApiKey)'
+    x11Display: '1'
+    xvfbConfiguration: '-a -n 0 -s "-screen 0 1024x768x24"'
+
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
