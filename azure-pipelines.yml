@@ -14,7 +14,7 @@ steps:
 - task: katalonTask@0
   inputs:
     version: '7.4.1'
-    executeArgs: '-browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest" -apiKey="$(KatalonApiKey)"'
+    executeArgs: '-browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest"'
     x11Display: '1'
     xvfbConfiguration: '-a -n 0 -s "-screen 0 1024x768x24"'
 
