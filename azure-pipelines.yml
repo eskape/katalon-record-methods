@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-16.04'
+  vmImage: 'windows-2019'
 
 steps:
 #- script: docker pull katalonstudio/katalon
