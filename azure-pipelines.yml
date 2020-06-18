@@ -18,3 +18,10 @@ steps:
     mergeTestResults: true
     failTaskOnFailedTests: true
     testRunTitle: 'Test run'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)/katalon/katalon/source/Reports'
+    artifact: 'Reports'
+    publishLocation: 'pipeline'
+
