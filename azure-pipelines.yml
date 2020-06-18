@@ -13,8 +13,8 @@ steps:
 
 - task: katalonTask@0
   inputs:
-    version: '7.4.1'
-    executeArgs: '-browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest"'
+    version: '7.4.0'
+    executeArgs: '-browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest" -apiKey="$(KatalonApiKey)"'
 
 - task: PublishTestResults@2
   inputs:
