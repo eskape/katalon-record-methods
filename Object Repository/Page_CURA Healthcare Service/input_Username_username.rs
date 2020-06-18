@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='txt-username']</value>
+         <value>//input[@id='txt-username-TRIGGER-NOT-FOUND']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
